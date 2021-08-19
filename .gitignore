@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 calculator/src/App.test.js
+node_modules/react-redux/src/hooks/useReduxContext.js
+
+node_modules
