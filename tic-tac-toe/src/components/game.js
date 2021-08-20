@@ -36,7 +36,7 @@ const Game = () => {
 
   const handleClick = (i) => {
     const hist = history.slice(0, stepNumber + 1);
-    const current = history[history.length - 1];
+    const current = hist[hist.length - 1];
     const squares = current.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
@@ -63,7 +63,7 @@ const Game = () => {
     const desc = move ? "Go to move #" + move : "Go to game start";
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{desc}</button>
+        <button className = "btn btn-hist" onClick={() => jumpTo(move)}>{desc}</button>
       </li>
     );
   });
@@ -75,8 +75,11 @@ const Game = () => {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
-  return (
+  return (<div>
+
+    <div> <h1> HELLO! </h1></div>
     <div className="game">
+
       <div className="game-board">
         <Board squares={current.squares} onClick={(i) => handleClick(i)} />
       </div>
@@ -85,10 +88,11 @@ const Game = () => {
         <ol>{moves}</ol>
       </div>
       <div> 
-      <button onClick = {() => restartGame()}>X</button>
+      <button className = "btn btn-reset" onClick = {() => restartGame()}>Restart</button>
       </div>
   </div>
-  );
+  
+  </div>  );
 }
 
 export default Game;
