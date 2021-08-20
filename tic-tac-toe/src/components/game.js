@@ -9,15 +9,13 @@ import * as actions from "../actions";
 import * as selectors from "../selectors";
 import calculateWinner from "./winner";
 
-function Game(props) {
+const Game = () => {
   const dispatch = useDispatch();
 
   const history = useSelector((state) => selectors.getHistory(state));
 
-  console.log(history);
   const stepNumber = useSelector((state) => selectors.getStepNumber(state));
 
-  console.log("StepNumber", stepNumber);
   const xIsNext = useSelector((state) => selectors.getXIsNext(state));
 
   const setStepNumber = (stepNumber) => {
@@ -32,7 +30,11 @@ function Game(props) {
     dispatch(actions.setXIsNext(xIsNext));
   };
 
-  function handleClick(i) {
+  const setResetGame = () => {
+    dispatch(actions.setResetGame());
+  }
+
+  const handleClick = (i) => {
     const hist = history.slice(0, stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
@@ -45,10 +47,13 @@ function Game(props) {
     setXIsNext(!xIsNext);
   }
 
-  function jumpTo(step) {
-    console.log("JumpTo", step);
+  const jumpTo = (step) => {
     setStepNumber(step);
     setXIsNext(step % 2 === 0);
+  }
+
+  const restartGame = () => {
+    setResetGame()
   }
 
   const current = history[stepNumber];
@@ -69,6 +74,7 @@ function Game(props) {
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
+
   return (
     <div className="game">
       <div className="game-board">
@@ -78,7 +84,10 @@ function Game(props) {
         <div>{status}</div>
         <ol>{moves}</ol>
       </div>
-    </div>
+      <div> 
+      <button onClick = {() => restartGame()}>X</button>
+      </div>
+  </div>
   );
 }
 

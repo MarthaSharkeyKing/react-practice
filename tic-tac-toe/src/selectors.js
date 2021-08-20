@@ -9,3 +9,7 @@ export function getXIsNext(store) {
 export function getHistory(store) {
   return store.history;
 }
+
+export function getResetGame(store) {
+  return store.getResetGame;
+}

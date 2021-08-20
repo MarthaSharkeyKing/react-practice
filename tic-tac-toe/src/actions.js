@@ -15,3 +15,9 @@ export function setXIsNext(xIsNext) {
 }
 
 export const X_IS_NEXT = "X_IS_NEXT";
+
+export function setResetGame(resetGame) {
+  return { type: RESET_GAME, resetGame };
+}
+
+export const RESET_GAME = "RESET_GAME";
