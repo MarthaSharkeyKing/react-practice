@@ -1,3 +1,5 @@
+import Square from "./square";
+
 function Board(props) {
   const renderSquare = (i) => {
     return <Square value={props.squares[i]} onClick={() => props.onClick(i)} />;
@@ -23,3 +25,5 @@ function Board(props) {
     </div>
   );
 }
+
+export default Board;
