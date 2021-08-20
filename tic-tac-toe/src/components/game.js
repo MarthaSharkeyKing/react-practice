@@ -36,7 +36,7 @@ const Game = () => {
 
   const handleClick = (i) => {
     const hist = history.slice(0, stepNumber + 1);
-    const current = history[history.length - 1];
+    const current = hist[hist.length - 1];
     const squares = current.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
