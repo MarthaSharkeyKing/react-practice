@@ -6,7 +6,7 @@ function Board(props) {
   };
 
   return (
-    <div>
+    <div className="full-board">
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}

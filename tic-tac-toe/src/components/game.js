@@ -63,7 +63,7 @@ const Game = () => {
     const desc = move ? "Go to move #" + move : "Go to game start";
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{desc}</button>
+        <button className = "btn btn-hist" onClick={() => jumpTo(move)}>{desc}</button>
       </li>
     );
   });
@@ -75,8 +75,11 @@ const Game = () => {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
-  return (
+  return (<div>
+
+    <div> <h1 className ="title-h1"> Tic-Tac-Toe </h1></div>
     <div className="game">
+
       <div className="game-board">
         <Board squares={current.squares} onClick={(i) => handleClick(i)} />
       </div>
@@ -85,10 +88,11 @@ const Game = () => {
         <ol>{moves}</ol>
       </div>
       <div> 
-      <button onClick = {() => restartGame()}>X</button>
+      <button className = "btn btn-reset" onClick = {() => restartGame()}>Restart</button>
       </div>
   </div>
-  );
+  
+  </div>  );
 }
 
 export default Game;
