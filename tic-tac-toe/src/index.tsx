@@ -8,11 +8,15 @@ import "./index.css";
 import { createStore } from "redux";
 import reducer from "./reducers/reducer";
 
-// import store from "./app/store";
+import {store} from "./app/store";
 
-const store = createStore(reducer);
+// const store = createStore(reducer);
 
-export default store;
+// export default store;
+
+export type RootState = ReturnType<typeof reducer>;
+
+
 
 // ========================================
 

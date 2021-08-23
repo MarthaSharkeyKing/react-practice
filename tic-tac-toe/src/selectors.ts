@@ -1,4 +1,4 @@
-interface Store{
+export interface Store{
   history: any[],
   stepNumber: number,  
   xIsNext: true,
@@ -20,3 +20,4 @@ export function getHistory(store: Store) {
 export function getResetGame(store: Store) {
   return store.getResetGame;
 }
+

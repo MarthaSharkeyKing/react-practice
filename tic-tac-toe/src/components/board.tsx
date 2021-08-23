@@ -2,7 +2,7 @@ import Square from "./square";
 
 interface BoardProps {
   squares : any[];
-  onClick : (i: number) => null
+  onClick : (i: number) =>void 
 }
 
 

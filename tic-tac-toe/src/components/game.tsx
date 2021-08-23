@@ -8,15 +8,16 @@ import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../actions";
 import * as selectors from "../selectors";
 import calculateWinner from "./winner";
+import { SelectionRange } from "typescript";
 
 const Game = () => {
   const dispatch = useDispatch();
 
-  const history = useSelector((state) => selectors.getHistory(state));
+  const history = useSelector((state: selectors.Store) => selectors.getHistory(state));
 
-  const stepNumber = useSelector((state) => selectors.getStepNumber(state));
+  const stepNumber = useSelector((state: selectors.Store) => selectors.getStepNumber(state));
 
-  const xIsNext = useSelector((state) => selectors.getXIsNext(state));
+  const xIsNext = useSelector((state: selectors.Store) => selectors.getXIsNext(state));
 
   const setStepNumber = (stepNumber: number) => {
     dispatch(actions.setStepNumber(stepNumber));
@@ -34,7 +35,7 @@ const Game = () => {
     dispatch(actions.setResetGame());
   }
 
-  const handleClick = (i) => {
+  const handleClick = (i: number) => {
     const hist = history.slice(0, stepNumber + 1);
     const current = hist[hist.length - 1];
     const squares = current.squares.slice();
@@ -47,7 +48,7 @@ const Game = () => {
     setXIsNext(!xIsNext);
   }
 
-  const jumpTo = (step) => {
+  const jumpTo = (step: number) => {
     setStepNumber(step);
     setXIsNext(step % 2 === 0);
   }
@@ -56,7 +57,8 @@ const Game = () => {
     setResetGame()
   }
 
-  const current = history[stepNumber];
+  // const current = history[stepNumber] ?? 1;
+  const current = [0,1]
   const winner = calculateWinner(current.squares);
 
   const moves = history.map((step, move) => {
