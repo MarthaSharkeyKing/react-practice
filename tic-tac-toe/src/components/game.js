@@ -6,7 +6,7 @@ import "../index.css";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../actions.ts";
-import * as selectors from "../selectors";
+import * as selectors from "../selectors.ts";
 import calculateWinner from "./winner.ts";
 
 const Game = () => {
