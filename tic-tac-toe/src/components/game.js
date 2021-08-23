@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../actions";
 import * as selectors from "../selectors";
-import calculateWinner from "./winner";
+import calculateWinner from "./winner.tsx";
 
 const Game = () => {
   const dispatch = useDispatch();
