@@ -5,9 +5,9 @@ import "../index.css";
 
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import * as actions from "../actions.ts";
-import * as selectors from "../selectors.ts";
-import calculateWinner from "./winner.ts";
+import * as actions from "../actions";
+import * as selectors from "../selectors";
+import calculateWinner from "./winner";
 
 const Game = () => {
   const dispatch = useDispatch();
@@ -18,15 +18,15 @@ const Game = () => {
 
   const xIsNext = useSelector((state) => selectors.getXIsNext(state));
 
-  const setStepNumber = (stepNumber) => {
+  const setStepNumber = (stepNumber: number) => {
     dispatch(actions.setStepNumber(stepNumber));
   };
 
-  const setHistory = (history) => {
+  const setHistory = (history: any[]) => {
     dispatch(actions.setHistory(history));
   };
 
-  const setXIsNext = (xIsNext) => {
+  const setXIsNext = (xIsNext: boolean) => {
     dispatch(actions.setXIsNext(xIsNext));
   };
 
