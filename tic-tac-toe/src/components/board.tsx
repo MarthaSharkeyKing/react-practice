@@ -1,7 +1,14 @@
-import Square from "./square.tsx";
+import Square from "./square";
 
-function Board(props) {
-  const renderSquare = (i) => {
+interface BoardProps {
+  squares : any[];
+  onClick : (i: number) => null
+}
+
+
+
+function Board(props : BoardProps) {
+  const renderSquare = (i: number) => {
     return <Square value={props.squares[i]} onClick={() => props.onClick(i)} />;
   };
 
@@ -9,7 +16,7 @@ function Board(props) {
     <div className="full-board">
       <div className="board-row">
         {renderSquare(0)}
-        {renderSquare(1)}
+        {renderSquare(1)} 
         {renderSquare(2)}
       </div>
       <div className="board-row">
