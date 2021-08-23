@@ -68,6 +68,8 @@ ul {
   bottom: 20px;
   width: 100%; */
   background: #ffa0a0;
+  margin-left: 15%;
+  padding: 15px 0px 15px 100px;
 }
 
 .game-info {
@@ -83,3 +85,8 @@ ul {
 /* .board-row {
   background: purple;
 } */
+
+.title-h1 {
+  color: #ffe3e3;
+  margin-left: 40%;
+}
