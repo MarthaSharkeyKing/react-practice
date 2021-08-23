@@ -1,6 +1,5 @@
 
-
-function calculateWinner(squares: number[]) {
+function calculateWinner(squares: string[]) {
   const lines: number[][] = [
     [0, 1, 2],
     [3, 4, 5],
@@ -12,7 +11,6 @@ function calculateWinner(squares: number[]) {
     [2, 4, 6],
   ];
 
-  console.log("Squares type:", typeof squares);
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {

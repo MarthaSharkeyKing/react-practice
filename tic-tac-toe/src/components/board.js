@@ -1,4 +1,4 @@
-import Square from "./square";
+import Square from "./square.tsx";
 
 function Board(props) {
   const renderSquare = (i) => {

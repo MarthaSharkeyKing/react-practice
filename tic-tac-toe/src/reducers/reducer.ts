@@ -9,7 +9,14 @@ export const initialState = {
   history: [{ squares: Array(9).fill(null) }],
 };
 
-export default function reducer(state = initialState, action) {
+interface initialStateTypes {
+  stepNumber: number;
+  xIsNext :boolean;
+  history: any[]
+}
+
+
+export default function reducer(state: initialStateTypes = initialState, action: any) {
   switch (action.type) {
     case RESET_GAME:
       return initialState;

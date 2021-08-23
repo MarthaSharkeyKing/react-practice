@@ -6,7 +6,7 @@ import Game from "./components/game";
 import "./index.css";
 
 import { createStore } from "redux";
-import reducer from "./reducers/reducer";
+import reducer from "./reducers/reducer.ts";
 
 // import store from "./app/store";
 

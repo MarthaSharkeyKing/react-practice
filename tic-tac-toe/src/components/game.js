@@ -1,13 +1,13 @@
 import Board from "./board";
-import React from "react";
+import * as React from "react";
 import ReactDOM from "react-dom";
 import "../index.css";
 
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import * as actions from "../actions";
+import * as actions from "../actions.ts";
 import * as selectors from "../selectors";
-import calculateWinner from "./winner.tsx";
+import calculateWinner from "./winner.ts";
 
 const Game = () => {
   const dispatch = useDispatch();
