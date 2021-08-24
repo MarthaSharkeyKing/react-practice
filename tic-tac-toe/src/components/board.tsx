@@ -5,13 +5,10 @@ interface BoardProps {
   onClick : (i: number) =>void 
 }
 
-
-
 function Board(props : BoardProps) {
   const renderSquare = (i: number) => {
     return <Square value={props.squares[i]} onClick={() => props.onClick(i)} />;
   };
-
   return (
     <div className="full-board">
       <div className="board-row">

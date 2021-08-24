@@ -9,6 +9,9 @@ import * as actions from "../actions";
 import * as selectors from "../selectors";
 import calculateWinner from "./winner";
 import { SelectionRange } from "typescript";
+import { useAppSelector, useAppDispatch } from "../app/hooks"
+import { HookCallbacks } from "async_hooks";
+
 
 const Game = () => {
   const dispatch = useDispatch();
@@ -18,6 +21,8 @@ const Game = () => {
   const stepNumber = useSelector((state: selectors.Store) => selectors.getStepNumber(state));
 
   const xIsNext = useSelector((state: selectors.Store) => selectors.getXIsNext(state));
+
+  // const resetGame = useSelector((state: selectors.Store) => selectors.getResetGame(state))
 
   const setStepNumber = (stepNumber: number) => {
     dispatch(actions.setStepNumber(stepNumber));
@@ -57,8 +62,7 @@ const Game = () => {
     setResetGame()
   }
 
-  // const current = history[stepNumber] ?? 1;
-  const current = [0,1]
+  const current = history[stepNumber];
   const winner = calculateWinner(current.squares);
 
   const moves = history.map((step, move) => {
